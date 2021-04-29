@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-    {% for x in mylist %}
-    <p>{{state_wise}}</p>
-    {% endfor %}
-    
+{#    {% for x in mylist %}#}
+{#    <p>{{state_wise}}</p>#}
+{#    {% endfor %}#}
+
+<div class="container">
+      <h2>Covid -19</h2>
+        <h1 style="color: red"> Use Ajax Over Here</h1>
+      <form method="GET" action="." class="filter-form">
+            <div id="div_id_state" class="form-group">
+                <label for="id_state" class="">States</label>
+                <div class="">
+                    <select name="state" class="select form-control" id="id_state">
+                        <option value="" selected="">---------</option>
+                        {% for state in states %}
+                            <option value="{{ state }}">{{ state }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div id="div_id_district" class="form-group">
+                <label for="id_district" class="">
+                    District</label>
+                <div class="">
+                    <select name="district" class="select form-control" id="id_district">
+                        <option value="" selected="">---------</option>
+                        {% for dist in districts %}
+                            <option value="{{ dist }}">{{ dist }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <button class="btn btn-info btn-block btn-sm" type="submit">
+          Filter
+        </button>
+      </form>
+<div>
+    <h2>{{ which_data }}</h2>
+    {{ data }}
+
+</div>
+    </div>
 </body>
 </html>
